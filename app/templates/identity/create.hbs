@@ -1,0 +1,8 @@
+<form {{action "create" on="submit" id="createIdentity"}}>
+  <h2>Create New Identity</h2>
+
+  <Input @id="identity" @placeholder="Enter Name" @for="createIdentiy" @type="text" @value={{this.newIdentity}} />
+
+  <button class="btn btn-primary btn-block" type="submit">Save</button>
+
+</form>

@@ -1,9 +1,10 @@
+<div class="navigation-container">
+
 {{#if session.isAuthenticated}}
   <button {{action "signOut"}}>Sign out</button>
-
 {{else}}
-  {{session.currentUser.displayName}}
-
   <button {{action "signIn" "google"}}>Sign in with Google</button>
 {{/if}}
+{{#link-to "identity.create"}}Create Identity{{/link-to}}
 {{yield}}
+</div>
