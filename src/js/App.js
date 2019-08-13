@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './pages/Home';
+import NavBar from './components/NavBar';
 import Signin from './pages/Signin';
 import { Signout } from './lib/firebase';
 import FirebaseAuthProvider from './context/firebase-auth-context';
@@ -33,6 +34,7 @@ export default class App extends React.Component {
 		return (
 			<FirebaseAuthProvider>
 				<Router>
+					<NavBar />
 					<Switch>
 						<Route exact path="/" component={Home} />
 						<Route path="/user/signin" component={Signin} />
