@@ -10,6 +10,7 @@
       ]
     ],
     "plugins": [
+      ["@babel/plugin-proposal-decorators", {"legacy": true}],
       "@babel/plugin-proposal-class-properties"
     ]
   },
@@ -39,7 +40,7 @@
     "firebase": "^6.3.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-firebaseui": "^3.1.2",
+    "react-firebaseui": "^4.0.0",
     "react-router": "^5.0.1",
     "react-router-dom": "^5.0.1",
     "styled-components": "^4.3.2"
@@ -48,8 +49,10 @@
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-decorators": "^7.4.4",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
+    "autobind-decorator": "^2.4.0",
     "autoprefixer": "^9.6.0",
     "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.6",
