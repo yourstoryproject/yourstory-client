@@ -16,20 +16,14 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-export const Signout = () => {
+export const signOut = () => {
 	return firebase
 		.auth()
 		.signOut()
-		.then(
-			() => {
-				console.log('log out!');
-
-				return <Redirect to="/home" />;
-			},
-			error => {
-				console.error('error : ', error);
-			},
-		);
+		.then(() => <Redirect to="/home" />)
+		.catch(error => {
+			console.error('error : ', error);
+		});
 };
 
 const fb = {
