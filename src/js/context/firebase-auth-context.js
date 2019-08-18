@@ -1,21 +1,21 @@
+import autobind from 'autobind-decorator';
 import React from 'react';
 import firebase from 'firebase/app';
+import { signOut } from '../lib/firebase';
+import { Redirect } from 'react-router-dom';
 
 const defaultFirebaseContext = {
 	authStatusReported: false,
 	email: '',
 	isUserSignedIn: false,
+	signOut: null,
 	uid: '',
 };
 
 export const FirebaseAuthContext = React.createContext(defaultFirebaseContext);
 
 export default class FirebaseAuthProvider extends React.Component {
-	constructor(props) {
-		super(props);
-
-		this.state = defaultFirebaseContext;
-	}
+	state = defaultFirebaseContext;
 
 	componentDidMount() {
 		firebase.auth().onAuthStateChanged(user => {
@@ -24,13 +24,19 @@ export default class FirebaseAuthProvider extends React.Component {
 					authStatusReported: true,
 					email: user.email,
 					isUserSignedIn: !!user,
+					signOut: this.signOut,
 					uid: user.uid,
 				});
 			}
 		});
 	}
 
-	componentWillUnmount() {}
+	@autobind
+	signOut() {
+		signOut().then(() => {
+			this.setState(defaultFirebaseContext);
+		});
+	}
 
 	render() {
 		const {
@@ -40,7 +46,6 @@ export default class FirebaseAuthProvider extends React.Component {
 
 		return (
 			<FirebaseAuthContext.Provider value={this.state}>
-				{/* {authStatusReported && children} */}
 				{children}
 			</FirebaseAuthContext.Provider>
 		);

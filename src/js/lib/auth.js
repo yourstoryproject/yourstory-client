@@ -3,6 +3,7 @@ import 'firebase/auth';
 
 export const uiConfig = {
 	//TODO: Add routes for redirects
+	signInFlow: 'redirect',
 	signInSuccessUrl: '/home',
 	signInOptions: [
 		firebase.auth.GoogleAuthProvider.PROVIDER_ID,

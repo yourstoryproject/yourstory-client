@@ -1,13 +1,16 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import firebase from 'firebase/app';
+import FirebaseAuthProvider, {
+	FirebaseAuthContext,
+} from './context/firebase-auth-context';
 import Home from './pages/Home';
 import NavBar from './components/NavBar';
+import React from 'react';
 import Signin from './pages/Signin';
-import { Signout } from './lib/firebase';
-import FirebaseAuthProvider from './context/firebase-auth-context';
-import firebase from 'firebase/app';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 export default class App extends React.Component {
+	static contextType = FirebaseAuthContext;
+
 	state = {
 		user: {
 			email: '',
@@ -36,9 +39,9 @@ export default class App extends React.Component {
 				<Router>
 					<NavBar />
 					<Switch>
-						<Route exact path="/" component={Home} />
 						<Route path="/user/signin" component={Signin} />
-						<Route path="/user/signout" component={Signout} />
+						<Route path="/home" component={Home} />
+						<Route path="/" component={Home} />
 						{/* <Route path="/user/:userId" component={User} /> */}
 						{/* <Route path="*" component={NotFound} /> */}
 					</Switch>
