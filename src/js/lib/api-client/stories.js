@@ -1,4 +1,5 @@
 import firebase from 'firebase';
+import apiClient from '../api-client';
 
 const Timestamp = firebase.firestore.Timestamp;
 const fStore = firebase.firestore();
@@ -31,32 +32,35 @@ export const add = ({
 	name = '',
 	title = '',
 }) => {
-	// check for duplicate titles is not working
-	let story = fsRef
+	name = encodeURI(name);
+
+	fsRef
 		.where('title', '==', title)
 		.limit(1)
 		.get()
-		.then(storiess => storiess);
+		.then(doc => {
+			let newStory;
 
-	name = encodeURI(name);
+			if (!doc.empty) {
+				return {
+					error: 'Unable to create story',
+					message: 'Story already exists with title: ' + title,
+				};
+			} else {
+				newStory = createStory(
+					contentLink,
+					description,
+					identities,
+					location,
+					name,
+					title,
+				);
 
-	if (story.empty) {
-		return {
-			error: 'Unable to create story',
-			message: 'Story already exists with title: ' + title,
-		};
-	} else {
-		story = createStory(
-			contentLink,
-			description,
-			identities,
-			location,
-			name,
-			title,
-		);
+				return fsRef.add(newStory).then(doc => {
+					//TODO: Return successful creation message
 
-		return fsRef.add(story).then(doc => {
-			console.log('story created : ', doc.id, doc);
+					apiClient.identities.addNew(identities);
+				});
+			}
 		});
-	}
 };
