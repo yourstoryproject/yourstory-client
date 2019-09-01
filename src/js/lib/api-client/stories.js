@@ -64,3 +64,30 @@ export const add = ({
 			}
 		});
 };
+
+export const get = title => {
+	if (title) {
+		return fsRef
+			.where('title', '==', title)
+			.get()
+			.then(querySnapshot => {
+				if (querySnapshot.empty) {
+					return {
+						message: 'No stories found',
+					};
+				} else {
+					return querySnapshot.docs.map(doc => doc.data());
+				}
+			});
+	} else {
+		return fsRef.get().then(querySnapshot => {
+			if (querySnapshot.empty) {
+				return {
+					message: 'No stories found',
+				};
+			} else {
+				return querySnapshot.docs.map(doc => doc.data());
+			}
+		});
+	}
+};
