@@ -30,7 +30,6 @@ export const addNew = identities => {
 			.doc(identity)
 			.get()
 			.then(doc => {
-				console.log(doc);
 				if (!doc.id) {
 					add(identity).then(() => {
 						console.log('Created identity tag for : ', identity);
