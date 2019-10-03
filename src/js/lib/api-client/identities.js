@@ -1,4 +1,4 @@
-import firebase from 'firebase';
+import firebase from 'firebase/app';
 
 const Timestamp = firebase.firestore.Timestamp;
 const fStore = firebase.firestore();
