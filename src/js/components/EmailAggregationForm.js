@@ -22,7 +22,7 @@ const FormModule = styled.form`
 		margin: 4px auto;
 		min-width: 40%;
 		padding: 8px;
-    text-transform: uppercase;
+		text-transform: uppercase;
 		transition: box-shadow 0.5s ease;
 		letter-spacing: 0.1em;
 	}
@@ -36,11 +36,11 @@ const FormModule = styled.form`
 
 	@media (min-width: 768px) {
 		flex-direction: row;
-    margin: auto;
-    width: 90%;
+		margin: auto;
+		width: 90%;
 
 		input {
-      flex-grow: 1;
+			flex-grow: 1;
 			margin: 4px;
 			min-width: unset;
 		}
@@ -55,7 +55,7 @@ const FormModule = styled.form`
 const FormGroup = styled.div`
 	display: flex;
 	flex-direction: column;
-  flex-grow: 1;
+	flex-grow: 1;
 
 	@media (min-width: 768px) {
 		flex-direction: row;
@@ -63,31 +63,31 @@ const FormGroup = styled.div`
 `;
 
 const Label = styled.h3`
-  margin: 12px;
-  text-align: center;
+	margin: 12px;
+	text-align: center;
 `;
 
 const EmailAggregationForm = () => {
 	return (
-    <React.Fragment>
-      <Label>Stay up to date with our story.</Label>
-      <FormModule
-        action="https://docs.google.com/forms/d/e/1FAIpQLSeR36w3vsYw1-9bh6QeYZlNKTCHx-ad7Xvs0o4UfknO6bHA9Q/formResponse"
-        method="post"
-      >
-        <FormGroup>
-          <input name={NAME} placeholder="First Name" type="text" />
+		<React.Fragment>
+			<Label>Stay up to date with our story.</Label>
+			<FormModule
+				action="https://docs.google.com/forms/d/e/1FAIpQLSeR36w3vsYw1-9bh6QeYZlNKTCHx-ad7Xvs0o4UfknO6bHA9Q/formResponse"
+				method="post"
+			>
+				<FormGroup>
+					<input name={NAME} placeholder="First Name" type="text" />
 
-          <input
-            name="emailAddress"
-            placeholder="Email Address"
-            type="email"
-          />
-        </FormGroup>
+					<input
+						name="emailAddress"
+						placeholder="Email Address"
+						type="email"
+					/>
+				</FormGroup>
 
-        <button type="submit">Sign up</button>
-      </FormModule>
-    </React.Fragment>
+				<button type="submit">Sign up</button>
+			</FormModule>
+		</React.Fragment>
 	);
 };
 
