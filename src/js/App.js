@@ -3,10 +3,14 @@ import FirebaseAuthProvider, {
 	FirebaseAuthContext,
 } from './context/firebase-auth-context';
 import Home from './pages/Home';
-import NavBar from './components/NavBar';
 import React from 'react';
-import Signin from './pages/Signin';
+import styled from 'styled-components';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+const Base = styled.div`
+	max-width: 768px;
+	margin: auto;
+`;
 
 export default class App extends React.Component {
 	static contextType = FirebaseAuthContext;
@@ -35,18 +39,20 @@ export default class App extends React.Component {
 
 	render() {
 		return (
-			<FirebaseAuthProvider>
-				<Router>
-					<NavBar />
-					<Switch>
-						{/* <Route path="/user/signin" component={Signin} /> */}
-						<Route path="/home" component={Home} />
-						<Route path="/" component={Home} />
-						{/* <Route path="/user/:userId" component={User} /> */}
-						{/* <Route path="*" component={NotFound} /> */}
-					</Switch>
-				</Router>
-			</FirebaseAuthProvider>
+			<Base>
+				<FirebaseAuthProvider>
+					<Router>
+						{/* <NavBar /> */}
+						<Switch>
+							{/* <Route path="/user/signin" component={Signin} /> */}
+							<Route path="/home" component={Home} />
+							<Route path="/" component={Home} />
+							{/* <Route path="/user/:userId" component={User} /> */}
+							{/* <Route path="*" component={NotFound} /> */}
+						</Switch>
+					</Router>
+				</FirebaseAuthProvider>
+			</Base>
 		);
 	}
 }
