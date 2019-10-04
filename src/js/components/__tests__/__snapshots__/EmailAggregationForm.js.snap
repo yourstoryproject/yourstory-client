@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EmailAggregationForm should render 1`] = `
+<Fragment>
+  <styled.h3>
+    Stay up to date with our story.
+  </styled.h3>
+  <styled.form
+    action="https://docs.google.com/forms/d/e/1FAIpQLSeR36w3vsYw1-9bh6QeYZlNKTCHx-ad7Xvs0o4UfknO6bHA9Q/formResponse"
+    method="post"
+  >
+    <styled.div>
+      <input
+        name="entry.1139116789"
+        placeholder="First Name"
+        type="text"
+      />
+      <input
+        name="emailAddress"
+        placeholder="Email Address"
+        type="email"
+      />
+    </styled.div>
+    <button
+      type="submit"
+    >
+      Sign up
+    </button>
+  </styled.form>
+</Fragment>
+`;
