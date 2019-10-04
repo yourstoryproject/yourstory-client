@@ -17,14 +17,15 @@ const FormModule = styled.form`
 	button {
 		background-color: #fd0000;
 		border-radius: 4px;
+		border-width: 0;
 		color: #fff;
 		font-weight: 600;
+		letter-spacing: 0.1em;
 		margin: 4px auto;
 		min-width: 40%;
 		padding: 8px;
 		text-transform: uppercase;
 		transition: box-shadow 0.5s ease;
-		letter-spacing: 0.1em;
 	}
 
 	button:hover,
