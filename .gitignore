@@ -27,3 +27,4 @@
 # firebase
 .firebase/
 *.log
+.awcache/

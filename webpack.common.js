@@ -1,10 +1,8 @@
-const path = require('path');
-
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const autoprefixer = require('autoprefixer');
+const {CheckerPlugin} = require('awesome-typescript-loader');
 const Dotenv = require('dotenv-webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require('path');
 
 const PUBLIC_PATH = path.resolve(__dirname, '/');
 
@@ -19,13 +17,16 @@ const config = {
 	module: {
 		rules: [
 			{
-				exclude: /(node_modules)/,
-				test: /\.js$/,
 				include,
-				use: {
-					loader: 'babel-loader',
-					options: { presets: ['@babel/preset-env'] },
+				loader: 'awesome-typescript-loader',
+				resolve: {
+					alias: {
+						components: resolveModule('components'),
+						pages: resolveModule('pages'),
+					},
+					extensions: ['.js', '.jsx', '.ts', '.tsx'],
 				},
+				test: /\.(js|ts)x?$/,
 			},
 			{
 				include: path.resolve(__dirname, 'src', 'css'),
@@ -64,6 +65,7 @@ const config = {
 		publicPath: PUBLIC_PATH,
 	},
 	plugins: [
+		new CheckerPlugin(),
 		new Dotenv(),
 		new MiniCssExtractPlugin({
 			filename: 'main.css',
