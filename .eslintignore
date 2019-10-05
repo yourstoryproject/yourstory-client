@@ -14,3 +14,5 @@
 # misc
 /coverage/
 !.*
+
+/**/*.d.ts
