@@ -17,11 +17,18 @@ module.exports = {
 	snapshotSerializers: ['enzyme-to-json/serializer'],
 	timers: 'fake',
 	transform: {
-		'^.+\\.js?$': 'babel-jest',
+		'^.+\\.jsx?$': 'babel-jest',
+		'^.+\\.tsx?$': 'ts-jest',
 	},
 	moduleNameMapper: {
 		'\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
 			'<rootDir>/assetsTransformer.js',
 		'\\.(css|less)$': '<rootDir>/assetsTransformer.js',
+		'^components(.*)$': '<rootDir>/src/js/components$1',
+		'^context(.*)$': '<rootDir>/src/js/context$1',
+		'^lib(.*)$': '<rootDir>/src/js/lib$1',
+		'^pages(.*)$': '<rootDir>/src/js/pages$1',
+		'^resources(.*)$': '<rootDir>/src/resources$1',
+		'^types(.*)$': '<rootDir>/src/js/types$1',
 	},
 };
