@@ -1,5 +1,6 @@
 import React from 'react';
 import apiClient from '../lib/api-client';
+import { IStory } from 'types';
 
 export default class Stories extends React.Component {
 	state = {
@@ -7,7 +8,7 @@ export default class Stories extends React.Component {
 	};
 
 	componentWillMount() {
-		apiClient.stories.get().then(stories => {
+		apiClient.stories.get('').then((stories: IStory[]): void => {
 			this.setState({ stories });
 		});
 	}

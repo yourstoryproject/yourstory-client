@@ -1,19 +1,18 @@
-export interface Story {
-  contentLink: string;
-  createdOn: Date;
-  description: string;
-  id: string;
-  identities: Identities;
-  location: string;
-  name: string;
-  title: string;
+import firebase from 'firebase/app';
+
+export interface IStory {
+	contentLink: string;
+	createdOn: firebase.firestore.Timestamp;
+	description: string;
+	id: string;
+	identities: IIdentity[];
+	location: string;
+	name: string;
+	title: string;
 }
 
-export interface Identity {
-  createdOn: Date;
-  id: string;
-  name: string;
+export interface IIdentity {
+	createdOn: firebase.firestore.Timestamp;
+	id: string;
+	name: string;
 }
-
-export type Stories = Story[];
-export type Identities = Identity[]
