@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom';
 import firebase from 'firebase/app';
 import React from 'react';
 
-const firebaseConfig = {
+const firebaseConfig: object = {
 	apiKey: process.env.API_KEY,
 	authDomain: process.env.AUTH_DOMAIN,
 	databaseURL: process.env.DATABASE_URL,
@@ -16,7 +16,7 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-export const signOut = () => {
+export const signOut = (): Promise<void | JSX.Element> => {
 	return firebase
 		.auth()
 		.signOut()
@@ -26,7 +26,7 @@ export const signOut = () => {
 		});
 };
 
-const fb = {
+const fb: object = {
 	auth: firebase.auth(),
 };
 
