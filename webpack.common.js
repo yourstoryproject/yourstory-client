@@ -1,4 +1,4 @@
-const {CheckerPlugin} = require('awesome-typescript-loader');
+const { CheckerPlugin } = require('awesome-typescript-loader');
 const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -22,7 +22,11 @@ const config = {
 				resolve: {
 					alias: {
 						components: resolveModule('components'),
+						context: resolveModule('context'),
+						lib: resolveModule('lib'),
 						pages: resolveModule('pages'),
+						resources: path.resolve(__dirname, 'src', 'resources'),
+						types: resolveModule('types'),
 					},
 					extensions: ['.js', '.jsx', '.ts', '.tsx'],
 				},
