@@ -2,14 +2,32 @@
 
 exports[`Home should render 1`] = `
 <styled.div>
-  <styled.img
-    alt="Your Story Project Logo"
-    src={
+  <LazyHero
+    color="#fff"
+    imageSrc="[object Object]"
+    isCentered={true}
+    isFixed={false}
+    minHeight="50vh"
+    opacity={0.3}
+    parallaxOffset={0}
+    style={
       Object {
-        "process": [Function],
+        "minHeight": "100vh",
+        "width": "100%",
       }
     }
-  />
-  <EmailAggregationForm />
+    transitionDuration={600}
+    transitionTimingFunction="ease-in-out"
+  >
+    <styled.img
+      alt="Your Story Project Logo"
+      src={
+        Object {
+          "process": [Function],
+        }
+      }
+    />
+    <EmailAggregationForm />
+  </LazyHero>
 </styled.div>
 `;
