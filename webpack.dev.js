@@ -8,6 +8,9 @@ module.exports = merge(common.config, {
 	devServer: {
 		hot: true,
 		port: 3000,
+		proxy: {
+      '**': 'http://0.0.0.0:5000',
+		},
 		publicPath: common.publicPath,
 	},
 	devtool: 'inline-source-map',
