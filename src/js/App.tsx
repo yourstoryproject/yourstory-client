@@ -1,11 +1,13 @@
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import firebase from 'firebase/app';
 import FirebaseAuthProvider, {
 	FirebaseAuthContext,
-} from './context/firebase-auth-context';
-import Home from './pages/Home';
+} from 'context/firebase-auth-context';
+import Home from 'pages/Home';
+import PrivacyPolicy from 'pages/PrivacyPolicy';
 import React from 'react';
 import styled from 'styled-components';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import TermsOfService from 'pages/TermsOfService';
 
 const Base = styled.div`
 	height: 100%;
@@ -44,6 +46,14 @@ export default class App extends React.Component {
 					<Router>
 						{/* <NavBar /> */}
 						<Switch>
+							<Route
+								path="/privacy-policy"
+								component={PrivacyPolicy}
+							/>
+							<Route
+								path="/terms-of-service"
+								component={TermsOfService}
+							/>
 							{/* <Route path="/user/signin" component={Signin} /> */}
 							<Route path="/home" component={Home} />
 							<Route path="/" component={Home} />
