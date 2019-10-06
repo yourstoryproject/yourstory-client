@@ -13,7 +13,7 @@ function resolveModule(name = '') {
 const include = [resolveModule()];
 
 const config = {
-	entry: resolveModule('main.js'),
+	entry: resolveModule('main.tsx'),
 	module: {
 		rules: [
 			{
