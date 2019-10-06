@@ -1,12 +1,13 @@
 import EmailAggregationForm from 'components/EmailAggregationForm';
+import heroBg from 'resources/images/hero-bg.jpg';
+import LazyHero from 'react-lazy-hero';
+import logo from 'resources/images/logo-banner-black.png';
 import React from 'react';
-import logo from 'resources/images/logo-banner-768.png';
 import styled from 'styled-components';
 
 const HomeContainer = styled.div`
 	display: flex;
 	flex-direction: column;
-	padding: 16px;
 `;
 
 const LogoBanner = styled.img`
@@ -25,8 +26,17 @@ const LogoBanner = styled.img`
 const Home = () => {
 	return (
 		<HomeContainer>
-			<LogoBanner alt="Your Story Project Logo" src={logo} />
-			<EmailAggregationForm />
+			<LazyHero
+				imageSrc={heroBg.toString()}
+				opacity={0.3}
+				style={{
+					minHeight: '100vh',
+					width: '100%',
+				}}
+			>
+				<LogoBanner alt="Your Story Project Logo" src={logo} />
+				<EmailAggregationForm />
+			</LazyHero>
 		</HomeContainer>
 	);
 };
