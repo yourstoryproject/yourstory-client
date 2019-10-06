@@ -8,7 +8,7 @@ import styled from 'styled-components';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const Base = styled.div`
-	max-width: 768px;
+	height: 100%;
 	margin: auto;
 `;
 
