@@ -77,11 +77,17 @@ const EmailAggregationForm = () => {
 				method="post"
 			>
 				<FormGroup>
-					<input name={NAME} placeholder="First Name" type="text" />
+					<input
+						name={NAME}
+						placeholder="First Name"
+						required
+						type="text"
+					/>
 
 					<input
 						name="emailAddress"
 						placeholder="Email Address"
+						required
 						type="email"
 					/>
 				</FormGroup>
