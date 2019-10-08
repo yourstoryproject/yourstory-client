@@ -6,6 +6,7 @@ import FirebaseAuthProvider, {
 import Home from 'pages/Home';
 import PrivacyPolicy from 'pages/PrivacyPolicy';
 import React from 'react';
+import Stories from 'components/Stories';
 import styled from 'styled-components';
 import TermsOfService from 'pages/TermsOfService';
 
@@ -55,6 +56,7 @@ export default class App extends React.Component {
 								component={TermsOfService}
 							/>
 							{/* <Route path="/user/signin" component={Signin} /> */}
+							<Route path="/app/stories" component={Stories} />
 							<Route path="/home" component={Home} />
 							<Route path="/" component={Home} />
 							{/* <Route path="/user/:userId" component={User} /> */}
