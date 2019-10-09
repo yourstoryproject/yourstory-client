@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 
-const PUBLIC_PATH = path.resolve(__dirname, '/');
+const PUBLIC_PATH = path.resolve(__dirname, '/public');
 
 function resolveModule(name = '') {
 	return path.resolve(__dirname, 'src', 'js', name);
@@ -55,17 +55,13 @@ const config = {
 			},
 			{
 				test: /\.(png|svg|jpg|gif)$/,
-				use: [
-					{
-						loader: 'file-loader',
-					},
-				],
+				use: ['file-loader'],
 			},
 		],
 	},
 	output: {
-		path: path.resolve(__dirname, 'dist'),
-		filename: 'main.bundle.js',
+		path: path.resolve(__dirname, 'public', 'dist'),
+		filename: 'main.js',
 		publicPath: PUBLIC_PATH,
 	},
 	plugins: [
@@ -73,10 +69,6 @@ const config = {
 		new Dotenv(),
 		new MiniCssExtractPlugin({
 			filename: 'main.css',
-		}),
-		new HtmlWebpackPlugin({
-			template: './src/index.html',
-			title: 'Your Story Project',
 		}),
 	],
 	target: 'web',
