@@ -13,11 +13,13 @@ exports[`EmailAggregationForm should render 1`] = `
       <input
         name="entry.1139116789"
         placeholder="First Name"
+        required={true}
         type="text"
       />
       <input
         name="emailAddress"
         placeholder="Email Address"
+        required={true}
         type="email"
       />
     </styled.div>
