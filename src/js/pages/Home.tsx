@@ -1,6 +1,7 @@
 import EmailAggregationForm from 'components/EmailAggregationForm';
 import heroBg from 'resources/images/hero-bg.jpg';
 import LazyHero from 'react-lazy-hero';
+import InformationCard from 'components/InformationCard';
 import logo from 'resources/images/logo-banner-black.png';
 import React from 'react';
 import styled from 'styled-components';
@@ -35,6 +36,9 @@ const Home = () => {
 				}}
 			>
 				<LogoBanner alt="Your Story Project Logo" src={logo} />
+
+				<InformationCard />
+
 				<EmailAggregationForm />
 			</LazyHero>
 		</HomeContainer>
