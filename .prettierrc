@@ -1,9 +1,0 @@
-{
-  "bracketSpacing": true,
-  "endOfLine": "lf",
-  "jsxSingleQuote": false,
-  "singleQuote": true,
-  "tabWidth": 4,
-  "trailingComma": "all",
-  "useTabs": true
-}
