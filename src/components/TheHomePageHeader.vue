@@ -1,10 +1,10 @@
 <template>
   <div class="home-page-header">
     <h1 class="home-page-header__title">The Notebook</h1>
-    <h3 class="home-page-header__subtitle">A travelling social experiment.</h3>
-    <h3 class="home-page-header__subtitle">
+    <h2 class="home-page-header__subtitle">A travelling social experiment.</h2>
+    <h2 class="home-page-header__subtitle">
       Share your story and see how far it travels.
-    </h3>
+    </h2>
     <h6 class="home-age-header__flavor">
       If notebooks are successful, you will receive a digital copy of all the
       stories collected in your notebook.
