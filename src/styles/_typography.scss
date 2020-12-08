@@ -1,12 +1,16 @@
 @import 'variables';
 
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+
 html,
-body {
+body,
+button {
+  color: #000;
+  font-family: 'Libre Baskerville', serif;
   font-size: $baseFontSize;
   font-weight: normal;
   letter-spacing: 2px;
   line-height: 2rem;
-  color: #000;
 }
 
 h1,
@@ -24,14 +28,17 @@ h1 {
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
   font-size: 1rem;
 }
 
-h4,
 h5,
 h6 {
   font-size: 0.8rem;
