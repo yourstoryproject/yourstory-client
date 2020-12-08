@@ -1,0 +1,19 @@
+@import 'variables';
+
+html,
+body {
+  font-size: $baseFontSize;
+  font-weight: normal;
+  letter-spacing: 2px;
+  line-height: 2rem;
+  color: #000;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
