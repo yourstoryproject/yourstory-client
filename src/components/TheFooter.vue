@@ -14,13 +14,9 @@ export default {};
 
 <style lang="scss" scoped>
 .footer {
-  bottom: 0;
   display: flex;
-  left: 0;
-  right: 0;
   height: 64px;
   padding: 24px;
-  position: absolute;
 
   &__contact {
     margin: auto auto 0 auto;
